@@ -1,0 +1,39 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - BACKEND_HOST=0.0.0.0
+      - BACKEND_PORT=8000
+      - DATABASE_URL=sqlite:///./data/cardiosense.db
+      - RECORDINGS_DIR=/app/data/recordings
+      - CORS_ORIGINS=http://127.0.0.1:5173,http://localhost:5173,http://frontend:5173
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE=http://127.0.0.1:8000
+      - VITE_WS_BASE=ws://127.0.0.1:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # Optional MQTT broker for future cloud architecture experiments
+  mosquitto:
+    image: eclipse-mosquitto:2
+    profiles: ["mqtt"]
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./docs/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    restart: unless-stopped

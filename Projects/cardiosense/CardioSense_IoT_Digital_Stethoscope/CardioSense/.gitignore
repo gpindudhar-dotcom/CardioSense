@@ -1,0 +1,49 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+*.db
+cardiosense.db
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.log
+npm-debug.log*
+
+# PlatformIO / firmware
+firmware/esp32/.pio/
+firmware/esp32/.vscode/.browse.c_cpp.db*
+firmware/esp32/.vscode/c_cpp_properties.json
+firmware/esp32/.vscode/launch.json
+firmware/esp32/.vscode/ipch
+
+# Environment / secrets
+.env
+backend/.env
+*.pem
+secrets.h
+wifi_secrets.h
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Recordings / build artifacts
+data/recordings/*.wav
+data/recordings/*.json
+!data/recordings/.gitkeep
+dist/
+build/
+*.zip
+
+# Docker
+docker-data/

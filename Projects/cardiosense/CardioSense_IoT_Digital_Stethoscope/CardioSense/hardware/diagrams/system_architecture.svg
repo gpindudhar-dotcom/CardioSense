@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="420" viewBox="0 0 980 420" role="img" aria-label="CardioSense system architecture">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8f1f4"/>
+      <stop offset="100%" stop-color="#d4ecec"/>
+    </linearGradient>
+  </defs>
+  <rect width="980" height="420" fill="url(#g)"/>
+  <text x="24" y="36" font-family="Segoe UI, Arial" font-size="20" fill="#12323c" font-weight="700">CardioSense Architecture (Educational Prototype)</text>
+  <g font-family="Segoe UI, Arial" font-size="13" fill="#12323c">
+    <rect x="30" y="70" width="120" height="60" rx="10" fill="#fff" stroke="#0e7c86"/>
+    <text x="50" y="105">Chest Piece</text>
+    <rect x="180" y="70" width="120" height="60" rx="10" fill="#fff" stroke="#0e7c86"/>
+    <text x="205" y="105">Microphone</text>
+    <rect x="330" y="70" width="120" height="60" rx="10" fill="#fff" stroke="#0e7c86"/>
+    <text x="350" y="105">Amplifier</text>
+    <rect x="480" y="70" width="140" height="60" rx="10" fill="#fff" stroke="#0e7c86"/>
+    <text x="510" y="97">ESP32-S3</text>
+    <text x="500" y="115">ADC + DSP + WiFi</text>
+    <rect x="660" y="70" width="130" height="60" rx="10" fill="#fff" stroke="#0e7c86"/>
+    <text x="690" y="105">Backend</text>
+    <rect x="820" y="70" width="130" height="60" rx="10" fill="#fff" stroke="#0e7c86"/>
+    <text x="840" y="105">Dashboard</text>
+    <path d="M150 100 H180 M300 100 H330 M450 100 H480 M620 100 H660 M790 100 H820" stroke="#0e7c86" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="480" y="180" width="300" height="90" rx="12" fill="#fff" stroke="#1a9b8e"/>
+    <text x="500" y="210">Packet: CSND magic + int16 PCM block</text>
+    <text x="500" y="232">WebSocket / HTTP · optional MQTT</text>
+    <text x="500" y="254">SQLite recordings · WAV export</text>
+    <text x="30" y="320" fill="#b45309">Educational prototype  not a medical diagnostic device.</text>
+    <text x="30" y="345" fill="#5b7580">Does not diagnose disease. Not for emergency or clinical use.</text>
+  </g>
+</svg>
